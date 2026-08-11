@@ -1,0 +1,1461 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Albert Silva Piscinas | Construção, Reforma e Equipamentos</title>
+
+  <meta name="description" content="Albert Silva Piscinas: construção, reforma, modernização e instalação de equipamentos para piscinas em toda a Grande São Paulo. Solicite seu orçamento grátis.">
+
+  <style>
+    :root {
+      --primary: #00a6d6;
+      --primary-dark: #007fa8;
+      --secondary: #0f2742;
+      --accent: #25d366;
+      --light: #f5fbff;
+      --white: #ffffff;
+      --gray: #64748b;
+      --dark: #0f172a;
+      --border: #dbeafe;
+      --shadow: 0 20px 45px rgba(15, 39, 66, 0.16);
+      --radius: 22px;
+      --max-width: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #1ebe5d);
+      color: var(--white);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.32);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(37, 211, 102, 0.42);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--secondary);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      background: #eaf8ff;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-header {
+      max-width: 720px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #e0f7ff;
+      color: var(--primary-dark);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.1;
+      color: var(--secondary);
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--gray);
+      font-size: 18px;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(219, 234, 254, 0.8);
+    }
+
+    .navbar {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--secondary);
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(0, 166, 214, 0.3);
+    }
+
+    .brand span {
+      display: block;
+      line-height: 1.1;
+    }
+
+    .brand small {
+      color: var(--primary);
+      font-weight: 800;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    nav a {
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .header-cta {
+      padding: 11px 18px;
+      font-size: 14px;
+    }
+
+    .mobile-menu-label {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--secondary);
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at top right, rgba(0, 166, 214, 0.8), transparent 35%),
+        linear-gradient(135deg, rgba(15, 39, 66, 0.96), rgba(0, 127, 168, 0.9)),
+        url("https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      min-height: calc(100vh - 78px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -140px -10%;
+      height: 260px;
+      background: var(--white);
+      border-radius: 50% 50% 0 0;
+      opacity: 0.12;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1;
+      margin-bottom: 22px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 strong {
+      color: #7ee7ff;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 650px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 28px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .hero-tags span {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 10px 15px;
+      border-radius: 999px;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-card h3 {
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .hero-card-list {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .hero-card-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .check {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .stats {
+      position: relative;
+      z-index: 3;
+      margin-top: -54px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--white);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .stat {
+      padding: 28px 20px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 34px;
+      color: var(--primary-dark);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--gray);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* Services */
+
+    .services {
+      background: linear-gradient(180deg, var(--white), var(--light));
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card,
+    .testimonial-card,
+    .portfolio-card,
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 30px rgba(15, 39, 66, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .service-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary), #7ee7ff);
+    }
+
+    .service-card:hover,
+    .portfolio-card:hover,
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 20px;
+      background: #e0f7ff;
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 24px;
+      color: var(--secondary);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .card-link {
+      color: var(--primary-dark);
+      font-weight: 800;
+    }
+
+    /* Diferenciais */
+
+    .features {
+      background: var(--secondary);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .features::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(0, 166, 214, 0.22);
+      border-radius: 50%;
+      top: -250px;
+      right: -180px;
+    }
+
+    .features .section-header h2,
+    .features .section-header p {
+      color: var(--white);
+    }
+
+    .features .section-header p {
+      color: rgba(255,255,255,0.78);
+    }
+
+    .features-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .feature-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 26px 18px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .feature-item div {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .feature-item h3 {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    /* Portfolio */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+    }
+
+    .portfolio-image {
+      height: 220px;
+      background:
+        linear-gradient(135deg, rgba(0,166,214,0.2), rgba(15,39,66,0.3)),
+        url("https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=80");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .portfolio-card:nth-child(2) .portfolio-image {
+      background-image:
+        linear-gradient(135deg, rgba(0,166,214,0.2), rgba(15,39,66,0.3)),
+        url("https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .portfolio-card:nth-child(3) .portfolio-image {
+      background-image:
+        linear-gradient(135deg, rgba(0,166,214,0.2), rgba(15,39,66,0.3)),
+        url("https://images.unsplash.com/photo-1560448075-bb485b067938?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .portfolio-card:nth-child(4) .portfolio-image {
+      background-image:
+        linear-gradient(135deg, rgba(0,166,214,0.2), rgba(15,39,66,0.3)),
+        url("https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .portfolio-card:nth-child(5) .portfolio-image {
+      background-image:
+        linear-gradient(135deg, rgba(0,166,214,0.2), rgba(15,39,66,0.3)),
+        url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .portfolio-card:nth-child(6) .portfolio-image {
+      background-image:
+        linear-gradient(135deg, rgba(0,166,214,0.2), rgba(15,39,66,0.3)),
+        url("https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .portfolio-content {
+      padding: 24px;
+    }
+
+    .portfolio-content h3 {
+      color: var(--secondary);
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .portfolio-content p {
+      color: var(--gray);
+      font-weight: 700;
+    }
+
+    /* Testimonials */
+
+    .testimonials {
+      background: var(--light);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      padding: 30px;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 20px;
+      margin-bottom: 18px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-card p {
+      color: var(--gray);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .client strong {
+      display: block;
+      color: var(--secondary);
+    }
+
+    .client span {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .cta {
+      background:
+        linear-gradient(135deg, rgba(15,39,66,0.96), rgba(0,127,168,0.92)),
+        url("https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+      padding: 90px 0;
+    }
+
+    .cta h2 {
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      font-size: 20px;
+      color: rgba(255,255,255,0.86);
+      margin-bottom: 32px;
+    }
+
+    /* Contact */
+
+    .contact {
+      background: var(--white);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .contact-card {
+      padding: 34px;
+    }
+
+    .contact-card h3 {
+      color: var(--secondary);
+      font-size: 28px;
+      margin-bottom: 22px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 20px;
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: #e0f7ff;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      flex: 0 0 44px;
+    }
+
+    .contact-list strong {
+      display: block;
+      color: var(--secondary);
+      margin-bottom: 2px;
+    }
+
+    .contact-list span {
+      color: var(--gray);
+    }
+
+    .social-box {
+      padding: 20px;
+      border-radius: 18px;
+      background: var(--light);
+      border: 1px solid var(--border);
+    }
+
+    .social-box strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--secondary);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .social-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--primary-dark);
+      font-weight: 800;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 7px;
+    }
+
+    label {
+      font-weight: 800;
+      color: var(--secondary);
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 14px;
+      border: 1px solid #cbd5e1;
+      font: inherit;
+      outline: none;
+      transition: 0.2s ease;
+      background: var(--white);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(0,166,214,0.12);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #081827;
+      color: rgba(255,255,255,0.76);
+      padding: 44px 0 26px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 22px;
+    }
+
+    .footer-brand {
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      z-index: 999;
+      box-shadow: 0 14px 32px rgba(37, 211, 102, 0.45);
+      transition: 0.25s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* Responsivo */
+
+    @media (max-width: 980px) {
+      .mobile-menu-label {
+        display: block;
+      }
+
+      nav {
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px 24px 24px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 18px 34px rgba(15, 39, 66, 0.12);
+        display: none;
+      }
+
+      nav a {
+        padding: 10px 0;
+      }
+
+      #menu-toggle:checked ~ nav {
+        display: flex;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .stats-grid,
+      .cards,
+      .testimonial-grid,
+      .portfolio-grid,
+      .contact-layout {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 68px 0;
+      }
+
+      .navbar {
+        height: 72px;
+      }
+
+      nav {
+        top: 72px;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
+
+      .hero-content {
+        padding: 56px 0 86px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .hero-actions .btn,
+      .cta .btn {
+        width: 100%;
+      }
+
+      .stats {
+        margin-top: -46px;
+      }
+
+      .stats-grid,
+      .cards,
+      .testimonial-grid,
+      .portfolio-grid,
+      .contact-layout,
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stat:last-child {
+        border-bottom: none;
+      }
+
+      .portfolio-image {
+        height: 190px;
+      }
+
+      .contact-card {
+        padding: 26px;
+      }
+
+      .floating-whatsapp {
+        width: 58px;
+        height: 58px;
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="#inicio" class="brand" aria-label="Albert Silva Piscinas">
+        <div class="brand-logo">AS</div>
+        <div>
+          <span>Albert Silva</span>
+          <small>Piscinas</small>
+        </div>
+      </a>
+
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="mobile-menu-label">☰</label>
+
+      <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#obras">Obras</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+        <a class="btn btn-primary header-cta" href="https://wa.me/5511947929765?text=Olá! Gostaria de solicitar um orçamento para minha piscina." target="_blank">
+          Orçamento Grátis
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <div>
+          <div class="hero-badge">✦ Qualidade e Confiança na Grande São Paulo</div>
+
+          <h1>Piscinas do seu <strong>sonho</strong>, feitas para durar!</h1>
+
+          <p>
+            Construção, reforma, modernização e instalação de equipamentos para piscinas,
+            com acabamento de alta qualidade e atendimento personalizado.
+          </p>
+
+          <div class="hero-tags">
+            <span>🏗️ Construção</span>
+            <span>🔧 Reforma</span>
+            <span>⚙️ Equipamentos</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5511947929765?text=Olá! Quero pedir um orçamento grátis para piscina." target="_blank">
+              Pedir Orçamento Grátis
+            </a>
+            <a class="btn btn-secondary" href="#servicos">
+              Ver Serviços →
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Soluções completas para sua piscina</h3>
+          <ul class="hero-card-list">
+            <li>
+              <span class="check">✓</span>
+              <span>Projetos personalizados para o seu espaço e estilo de vida.</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Reformas completas com segurança, eficiência e acabamento premium.</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Instalação de filtros, bombas, aquecedores e acessórios.</span>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <span>Atendimento em toda a Grande São Paulo.</span>
+            </li>
+          </ul>
+          <a class="btn btn-primary" href="#contato">Solicitar Atendimento</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat">
+            <strong>200+</strong>
+            <span>Piscinas Construídas</span>
+          </div>
+          <div class="stat">
+            <strong>15+</strong>
+            <span>Anos de Experiência</span>
+          </div>
+          <div class="stat">
+            <strong>98%</strong>
+            <span>Clientes Satisfeitos</span>
+          </div>
+          <div class="stat">
+            <strong>100%</strong>
+            <span>Qualidade Garantida</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="servicos">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">O que fazemos</span>
+          <h2>Nossos Serviços</h2>
+          <p>
+            Somos especialistas em tudo que envolve piscinas — da ideia à entrega,
+            com acabamento de alta qualidade.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="service-card">
+            <div class="icon">🏗️</div>
+            <h3>Construção de Piscinas</h3>
+            <p>
+              Projetamos e construímos a piscina dos seus sonhos do zero.
+              Projetos personalizados, adaptados ao seu espaço e estilo de vida.
+            </p>
+            <a class="card-link" href="#contato">Solicitar orçamento →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🔧</div>
+            <h3>Reforma e Modernização</h3>
+            <p>
+              Renovamos revestimentos, impermeabilização, bordas e toda a estrutura
+              para deixar sua piscina como nova.
+            </p>
+            <a class="card-link" href="#contato">Quero reformar minha piscina →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">⚙️</div>
+            <h3>Equipamentos</h3>
+            <p>
+              Instalação e venda de filtros, bombas, aquecedores e acessórios das
+              melhores marcas do mercado.
+            </p>
+            <a class="card-link" href="#contato">Falar sobre equipamentos →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section features" id="diferenciais">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Por que nos escolher</span>
+          <h2>Diferenciais que fazem a diferença</h2>
+          <p>
+            Nossa missão é transformar o seu sonho em realidade com os mais altos
+            padrões de qualidade do mercado.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <div>💧</div>
+            <h3>Água Cristalina</h3>
+          </div>
+
+          <div class="feature-item">
+            <div>🛡️</div>
+            <h3>Segurança e Durabilidade</h3>
+          </div>
+
+          <div class="feature-item">
+            <div>🏆</div>
+            <h3>Materiais de Qualidade</h3>
+          </div>
+
+          <div class="feature-item">
+            <div>👷</div>
+            <h3>Equipe Especializada</h3>
+          </div>
+
+          <div class="feature-item">
+            <div>🤝</div>
+            <h3>Atendimento Personalizado</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio" id="obras">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Nosso Portfólio</span>
+          <h2>Obras Realizadas</h2>
+          <p>
+            Cada piscina é um projeto único. Veja algumas das obras que já
+            transformamos em realidade.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Residencial São Paulo</h3>
+              <p>Construção + Cascata</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Deck &amp; Área Gourmet</h3>
+              <p>Reforma completa</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Borda Infinita</h3>
+              <p>Projeto sob medida</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Iluminação LED</h3>
+              <p>Modernização</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Família Completa</h3>
+              <p>Piscina + Raia</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Reforma Premium</h3>
+              <p>Revitalização completa</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="depoimentos">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Depoimentos</span>
+          <h2>O que nossos clientes dizem</h2>
+          <p>
+            A confiança dos nossos clientes é o reflexo do cuidado em cada detalhe.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "Contratei o Albert Silva para construir minha piscina e fiquei encantado!
+              O acabamento ficou perfeito, prazo cumprido e o atendimento foi excelente
+              do início ao fim. Super recomendo!"
+            </p>
+            <div class="client">
+              <div class="avatar">MF</div>
+              <div>
+                <strong>Marcos Fernandes</strong>
+                <span>São Paulo, SP</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "Reformei minha piscina que estava bem deteriorada. O resultado foi
+              incrível — parece nova! Equipe muito profissional, limpa e pontual.
+              Já indiquei para vários amigos."
+            </p>
+            <div class="client">
+              <div class="avatar">AC</div>
+              <div>
+                <strong>Ana Carolina</strong>
+                <span>Guarulhos, SP</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "Os equipamentos instalados pela AS Piscinas transformaram minha piscina.
+              A água ficou cristalina e o sistema de filtragem é silencioso.
+              Ótimo custo-benefício. Serviço nota 10!"
+            </p>
+            <div class="client">
+              <div class="avatar">RP</div>
+              <div>
+                <strong>Roberto Pacheco</strong>
+                <span>Osasco, SP</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Transformamos seu sonho em realidade!</h2>
+        <p>
+          Solicite agora seu orçamento gratuito e sem compromisso.
+          Respondemos em até 1 hora.
+        </p>
+        <a class="btn btn-primary" href="https://wa.me/5511947929765?text=Olá! Gostaria de solicitar um orçamento gratuito para minha piscina." target="_blank">
+          Falar no WhatsApp Agora
+        </a>
+      </div>
+    </section>
+
+    <section class="section contact" id="contato">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Fale Conosco</span>
+          <h2>Entre em contato</h2>
+          <p>
+            Estamos prontos para atender você e realizar o projeto da piscina dos seus sonhos.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <aside class="contact-card">
+            <h3>Informações de Contato</h3>
+
+            <ul class="contact-list">
+              <li>
+                <div class="contact-icon">📱</div>
+                <div>
+                  <strong>WhatsApp / Telefone</strong>
+                  <span>(11) 94792-9765</span>
+                </div>
+              </li>
+
+              <li>
+                <div class="contact-icon">📘</div>
+                <div>
+                  <strong>Facebook</strong>
+                  <span>Albert Silva</span>
+                </div>
+              </li>
+
+              <li>
+                <div class="contact-icon">📸</div>
+                <div>
+                  <strong>Instagram</strong>
+                  <span>@Albertsilva_piscinas</span>
+                </div>
+              </li>
+
+              <li>
+                <div class="contact-icon">⏰</div>
+                <div>
+                  <strong>Horário de Atendimento</strong>
+                  <span>Segunda a Sábado: 8h às 18h</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="social-box">
+              <strong>Siga nossas redes:</strong>
+              <div class="social-links">
+                <a href="#" aria-label="Facebook Albert Silva">Facebook</a>
+                <a href="#" aria-label="Instagram Albert Silva Piscinas">Instagram</a>
+              </div>
+            </div>
+          </aside>
+
+          <div class="contact-card">
+            <h3>Solicite seu Orçamento</h3>
+
+            <form id="whatsappForm">
+              <div class="form-group">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required="">
+              </div>
+
+              <div class="form-group">
+                <label for="telefone">Telefone / WhatsApp</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required="">
+              </div>
+
+              <div class="form-group">
+                <label for="servico">Tipo de serviço</label>
+                <select id="servico" name="servico" required="">
+                  <option value="">Selecione o serviço...</option>
+                  <option>Construção de piscina</option>
+                  <option>Reforma de piscina</option>
+                  <option>Instalação de equipamentos</option>
+                  <option>Manutenção</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Conte brevemente o que você precisa..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                Enviar pelo WhatsApp →
+              </button>
+
+              <p class="form-note">
+                Ao clicar, você será direcionado para o WhatsApp com a mensagem pronta.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <a href="#inicio" class="brand footer-brand">
+          <div class="brand-logo">AS</div>
+          <div>
+            <span>Albert Silva</span>
+            <small>Piscinas</small>
+          </div>
+        </a>
+
+        <div class="footer-links">
+          <a href="#servicos">Serviços</a>
+          <a href="#diferenciais">Diferenciais</a>
+          <a href="#obras">Obras</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Albert Silva Piscinas. Todos os direitos reservados.</span>
+        <span>📞 (11) 94792-9765 &nbsp;|&nbsp; 📸 @Albertsilva_piscinas</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/5511947929765?text=Olá! Gostaria de solicitar um orçamento para minha piscina." target="_blank" aria-label="Falar no WhatsApp">
+    ☎
+  </a>
+
+  <script>
+    const form = document.getElementById("whatsappForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim();
+      const telefone = document.getElementById("telefone").value.trim();
+      const servico = document.getElementById("servico").value;
+      const mensagem = document.getElementById("mensagem").value.trim();
+
+      const texto = `Olá! Gostaria de solicitar um orçamento.
+
+Nome: ${nome}
+Telefone: ${telefone}
+Serviço desejado: ${servico}
+Mensagem: ${mensagem || "Não informada"}
+
+Vim pelo site da Albert Silva Piscinas.`;
+
+      const numero = "5511947929765";
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+      window.open(url, "_blank");
+    });
+  </script>
+
+
+</body></html>
